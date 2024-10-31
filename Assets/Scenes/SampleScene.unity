@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 197634739}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: -0.11}
+  m_LocalPosition: {x: 0, y: -12.87, z: -0.11}
   m_LocalScale: {x: 38.92811, y: 38.92811, z: 38.92811}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -566,6 +566,7 @@ MonoBehaviour:
     type: 3}
   prefabCube2: {fileID: 825481054126838760, guid: 82904757f5c90684bb70f67a0daf6de6,
     type: 3}
+  rojo: 0
 --- !u!4 &1180845484
 Transform:
   m_ObjectHideFlags: 0

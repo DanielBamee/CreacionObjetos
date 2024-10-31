@@ -10,20 +10,32 @@ public class ObjectCreator : MonoBehaviour
     [SerializeField]
     GameObject prefabCube2;
     GameObject objetoCreado2;
+    public bool rojo = false;
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+        objetoCreado = Instantiate(prefabCube, Vector3.zero, Quaternion.identity);
+        objetoCreado2 = Instantiate(prefabCube2, Vector3.zero, Quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("R"))
+        if (Input.GetKey(KeyCode.R))
+        {
+            rojo = true;
+        }
+
+        if (Input.GetKey(KeyCode.B))
+        {
+            rojo = false;
+        }
+
+        ////////////////////////////////////////////////////////////////////////////
+
+        if (rojo == true)
         {
             objetoCreado2.SetActive(false);
-            objetoCreado = Instantiate(prefabCube, Vector3.zero, Quaternion.identity);
             objetoCreado.SetActive(false);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -34,11 +46,9 @@ public class ObjectCreator : MonoBehaviour
             }
             objetoCreado.SetActive(true);
         }
-
-        if (Input.GetKeyDown("B"))
+        if (rojo == false)
         {
             objetoCreado.SetActive(false);
-            objetoCreado2 = Instantiate(prefabCube, Vector3.zero, Quaternion.identity);
             objetoCreado2.SetActive(false);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
